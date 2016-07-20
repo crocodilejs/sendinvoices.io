@@ -1,0 +1,27 @@
+
+{% extends "layout.njk" %}
+
+{% block body %}
+
+  <div class="container">
+    <div class="jumbotron m-t-1">
+      <h1>You're connected!  Send an invoice below</h1>
+    </div>
+    <div class="row m-t-1">
+      <div class="col-md-12">
+        <form action="/send-invoice" method="POST">
+          <fieldset class="form-group">
+            <label class="form-control-label" for="email">Email Address</label>
+            <input id="email" {% if config.env == 'development' %}value="niftylettuce@gmail.com"{% endif %} "type="email" name="email" required="required" class="form-control form-control-lg" />
+          </fieldset>
+          <fieldset class="form-group">
+            <label class="form-control-label" for="amount">Amount</label>
+            <input id="amount" type="number" min="0" step="0.01" name="amount" required="required" class="form-control form-control-lg" />
+          </fieldset>
+          <button type="submit" class="btn btn-lg btn-block btn-primary">Send Invoice</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

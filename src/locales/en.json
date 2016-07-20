@@ -1,0 +1,9 @@
+{
+	"Email address was invalid": "Email address was invalid",
+	"Amount must be at least (1)": "Amount must be at least (1)",
+	"You successfully sent an invoice in the amount of %d to %s": "You successfully sent an invoice in the amount of %d to %s",
+	"Invoice was already paid, woo hoo!": "Invoice was already paid, woo hoo!",
+	"Amount must be less than or equal to (10000)": "Amount must be less than or equal to (10000)",
+	"Invoice does not exist": "Invoice does not exist",
+	"You successfully paid the invoice, thank you!": "You successfully paid the invoice, thank you!"
+}

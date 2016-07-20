@@ -1,0 +1,24 @@
+
+{% extends "layout.njk" %}
+
+{% block body %}
+
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Pay Invoice #{{ invoice.reference }}</h1>
+      <form action="/pay-invoice/{{ invoice.id }}" method="POST">
+        <script
+          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="{{ config.stripe.publishable_key }}"
+          data-amount="{{ invoice.amount_cents }}"
+          data-email="{{ invoice.email }}"
+          data-name="sendinvoices.io"
+          data-description="invoice #{{ invoice.reference }}"
+          {# data-image="/img/documentation/checkout/marketplace.png" #}
+          data-locale="auto">
+        </script>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
