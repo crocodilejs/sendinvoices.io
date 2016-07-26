@@ -49,7 +49,8 @@ const Invoices = new mongoose.Schema({
   },
   amount_cents: {
     type: Number,
-    min: 100
+    min: 100,
+    max: 100000
   },
   status: {
     type: String,
